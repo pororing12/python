@@ -15,8 +15,6 @@ def screenLeftClick(x, y) :
     r = random.random()
     g = random.random()
     b = random.random()
-    turtle.forward(100)
-    turtle.right(90)
 
 def screenRightClick(x, y) :
     turtle.penup()
