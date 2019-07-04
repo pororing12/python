@@ -27,10 +27,11 @@ label.pack()
 
 window.mainloop()
 '''
-
-#OOP tkinter
-
 '''
+#OOP tkinter
+from pygame.tests.test_utils import prompt
+
+
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 
@@ -50,7 +51,7 @@ if __name__ == "__main__" :
     ex = MyApp()
     sys.exit(app.exec_())
 '''
-
+'''
 from tkinter import *
 from tkinter import Menu
 
@@ -81,4 +82,24 @@ window.config(menu = menu)
 window.bind("<Control-n>", menu_new)
 window.bind("<Control-h>", menu_help)
 window.mainloop()
+'''
 
+
+from tkinter import *
+
+window = Tk()
+window.title("Music player")
+label1 = Label(window, text = "mouse & key event")
+label1.pack()
+def key (event) :
+    if event.char == event.keysym :
+        msg = 'Normal key %r' % event.char
+    else :
+        msg = 'Special Key %r' % event.keysym
+    label1.config(text=msg)
+def mouse (event) :
+    msg = 'Mouse event %s' % event.widget
+    label1.config(text=msg)
+label1.bind_all('<Key>', key)
+label1.bind_all('<Button-3>', mouse)
+window.mainloop( )
